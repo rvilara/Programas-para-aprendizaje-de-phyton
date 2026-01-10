@@ -1,0 +1,38 @@
+import random
+
+print("Bienvenido al juego de dados!")
+
+puntos_usuario = 0
+puntos_computadora = 0
+rondas = 5
+
+for ronda in range(rondas):
+    print(f"\nRonda {ronda+1}:")
+    
+    input("Pulsa enter para landar el dado...")
+    dado_usuario = random.randint(1,6)
+    dado_computadora = random.randint(1,6)
+    
+    print(f"Tu sacaste: {dado_usuario}")
+    print(f"La computadora saco: {dado_computadora}")
+    
+    if dado_usuario > dado_computadora:
+        print("Ganste esta ronda!")
+        puntos_usuario +=1
+    elif dado_usuario < dado_computadora:
+        print("La computadora gana esta ronda!")
+        puntos_computadora +=1
+    else:
+        print("Esta ronda es un empate!")
+        
+print("\nResultados finales:")
+print(f"Tus puntos: {puntos_usuario}")
+print(f"Puntos de la computadora: {puntos_computadora}")
+
+if puntos_usuario > puntos_computadora:
+    print("Felicidades! Ganaste el juego!") 
+elif puntos_usuario < puntos_computadora:
+    print("La computadora gana el juego! Mejor suerte la proxima vez.")
+else:
+    print("El juego termina en un empate!")
+    
